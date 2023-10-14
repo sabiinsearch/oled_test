@@ -7,10 +7,11 @@ Adafruit_SH1106G display = Adafruit_SH1106G(128, 64, &Wire,4);
 
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   Serial.println("128x64 OLED FeatherWing test");
   delay(250); // wait for the OLED to power up
+ 
   display.begin(0x3C, true); // Address 0x3C default
 
   Serial.println("OLED begun");
@@ -25,7 +26,7 @@ void setup() {
   display.clearDisplay();
   display.display();
 
-  display.setRotation(1);
+  //display.setRotation(1);
   Serial.println("Button test");
 
   // pinMode(BUTTON_A, INPUT_PULLUP);
@@ -33,14 +34,16 @@ void setup() {
   // pinMode(BUTTON_C, INPUT_PULLUP);
 
   // text display tests
+  
   display.setTextSize(1);
-  display.setTextColor(SH110X_BLACK);
-  display.setCursor(0,0);
-  display.print("Connecting to SSID\n'adafruit':");
+  display.setTextColor(SH110X_WHITE);
+  display.setCursor(0,20);
+  display.print("Connecting to \'Hukam\'\n");
   display.print("connected!");
-  display.println("IP: 10.0.1.23");
-  display.println("Sending val #0");
+//  display.println("IP: 10.0.1.23");
+//  display.println("Sending val #0");
   display.display(); // actually display all of the above
+  
 }
 
 void loop() {
