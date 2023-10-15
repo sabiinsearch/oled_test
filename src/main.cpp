@@ -37,13 +37,18 @@ void setup() {
   
   display.setTextSize(1);
   display.setTextColor(SH110X_WHITE);
-  display.setCursor(0,20);
-  display.print("Connecting to \'Hukam\'\n");
-  display.print("connected!");
+  display.setCursor(40,20);
+  display.print("Testing..\n");
 //  display.println("IP: 10.0.1.23");
 //  display.println("Sending val #0");
   display.display(); // actually display all of the above
+  delay(2000);
   
+  display.setCursor(35,35);
+  display.print("connected!");
+  display.display(); // actually display all of the above
+
+
 }
 
 void loop() {
